@@ -5,7 +5,7 @@ namespace App\Models;
 use App\Enums\ScheduleDay;
 use Illuminate\Database\Eloquent\Model;
 
-class schedule extends Model
+class Schedule extends Model
 {
     protected $fillable = [
         'fakultas_id',
