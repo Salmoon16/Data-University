@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Enums\FeeStatus;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Fee extends Model
 {
@@ -16,4 +17,13 @@ class Fee extends Model
         'status',
         ];
 
+        public function mahasiswa () : BelongsTo {
+            return $this->belongsTo(Mahasiswa::class);
+        }
+        public function feegroup () : BelongsTo {
+            return $this->belongsTo(FeeGroup::class);
+        }
+        public function academicyear () : BelongsTo {
+            return $this->belongsTo(AcademicYear::class);
+        }
 }
