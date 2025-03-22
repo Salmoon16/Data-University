@@ -3,8 +3,10 @@
 namespace App\Models;
 
 use App\Enums\StudyPlanStatus;
+use Illuminate\Database\Eloquent\Factories\BelongsToManyRelationship;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class StudyPlan extends Model
 {
@@ -27,7 +29,11 @@ class StudyPlan extends Model
         return $this->belongsTo(Mahasiswa::class);
     }
 
-    public function academicyear () : BelongsTo {
+    public function academicYear () : BelongsTo {
         return $this->belongsTo(AcademicYear::class);
+    }
+
+    public function schedules () : BelongsToMany {
+        return $this->belongsToMany(Schedule::class, 'study_plan_schedule')->withTimestamps();
     }
 }

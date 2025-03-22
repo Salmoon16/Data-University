@@ -15,15 +15,18 @@ class Fee extends Model
         'academic_year_id',
         'semester',
         'status',
-        ];
+    ];
 
-        public function mahasiswa () : BelongsTo {
-            return $this->belongsTo(Mahasiswa::class);
-        }
-        public function feegroup () : BelongsTo {
-            return $this->belongsTo(FeeGroup::class);
-        }
-        public function academicyear () : BelongsTo {
-            return $this->belongsTo(AcademicYear::class);
-        }
+    public function mahasiswa(): BelongsTo
+    {
+        return $this->belongsTo(Mahasiswa::class);
+    }
+    public function feeGroup(): BelongsTo
+    {
+        return $this->belongsTo(FeeGroup::class);
+    }
+    public function academicYear(): BelongsTo
+    {
+        return $this->belongsTo(AcademicYear::class);
+    }
 }

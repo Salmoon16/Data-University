@@ -23,7 +23,7 @@ class Departement extends Model
         );
     }
 
-    public function fakultas () : BelongsTo {
+    public function faculty () : BelongsTo {
         return $this->belongsTo(Fakultas::class);
     }
 }
