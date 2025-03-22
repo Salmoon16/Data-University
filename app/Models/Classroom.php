@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Classroom extends Model
 {
@@ -13,4 +14,14 @@ class Classroom extends Model
         'name',
         'slug',
     ];
+
+    public function fakultas () : BelongsTo {
+        return $this->belongsTo(Fakultas::class);
+    }
+    public function departement () : BelongsTo {
+        return $this->belongsTo(Departement::class);
+    }
+    public function academicyear () : BelongsTo {
+        return $this->belongsTo(AcademicYear::class);
+    }
 }
