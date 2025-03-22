@@ -10,9 +10,6 @@ class AcademicYear extends Model
 
     protected $fillable = [
     'id',
-    'academic_year_id',
-    'university_id',
-    'faculty_id',
     'name',
     'slug',
     'start_date',
@@ -27,4 +24,5 @@ class AcademicYear extends Model
             'semester' => AcademicYearSemester::class,
         ];
     }
+
 }
