@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class StudyResourceGrade extends Model
 {
@@ -13,4 +14,12 @@ class StudyResourceGrade extends Model
         'weight_of_value',
         'grade',
     ];
+
+    public function studyResource () : BelongsTo {
+        return $this->belongsTo(StudyResource::class);
+    }
+
+    public function course () : BelongsTo {
+        return $this->belongsTo(Courses::class);
+    }
 }
