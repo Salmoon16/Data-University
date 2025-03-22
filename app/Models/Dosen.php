@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Dosen extends Model
 {
@@ -13,4 +14,16 @@ class Dosen extends Model
         'dosen_number',
         'academic_title',
     ];
+
+    public function user () : BelongsTo {
+        return $this->belongsTo(User::class);
+    }
+
+    public function fakultas () : BelongsTo {
+        return $this->belongsTo(Fakultas::class);
+    }
+
+    public function departement () : BelongsTo {
+        return $this->belongsTo(Departement::class);
+    }
 }
