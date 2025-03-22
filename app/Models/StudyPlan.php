@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Enums\StudyPlanStatus;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class StudyPlan extends Model
 {
@@ -20,5 +21,13 @@ class StudyPlan extends Model
         return [
             'status' => StudyPlanStatus::class,
         ];
+    }
+
+    public function mahasiswa () : BelongsTo {
+        return $this->belongsTo(Mahasiswa::class);
+    }
+
+    public function academicyear () : BelongsTo {
+        return $this->belongsTo(AcademicYear::class);
     }
 }
